@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Feliz Cumpleaños Julieta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Particulas de fondo -->
+  <div class="particles" id="particles"></div>
+
+  <!-- PANTALLA DE INICIO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="flowers-top">&#10047; &#10047; &#10047;</div>
+      
+      <h1 class="hero-title">Feliz Cumpleaños</h1>
+      <h2 class="hero-name">Julieta</h2>
+      
+      <div class="dedication">
+        <p class="dedication-text">
+          Hoy celebramos tu dia, el dia de alguien muy especial que llena de alegria
+          la vida de todos los que la rodean.
+        </p>
+        <p class="dedication-text">
+          Queremos que sepas que te amamos muchisimo y que estamos orgullosos
+          de la mujer increible en la que te has convertido.
+        </p>
+        <p class="dedication-sign">
+          Con todo nuestro amor,<br>
+          <span class="family-name">Mama Rocio</span>
+          <span class="family-separator">&#10047;</span>
+          <span class="family-name">Abuelos Laura y Juan</span>
+          <span class="family-separator">&#10047;</span>
+          <span class="family-name">Tios Stepha y Franco</span>
+        </p>
+      </div>
+
+      <div class="age-badge">
+        <span class="age-number">17</span>
+      </div>
+
+      <button class="reveal-btn" id="revealBtn">
+        <span class="btn-text">Toca para ver tus recuerdos</span>
+        <span class="btn-icon">&#10084;</span>
+      </button>
+
+      <div class="flowers-bottom">&#10047; &#10047; &#10047;</div>
+    </div>
+  </section>
+
+  <!-- GALERIA DE FOTOS -->
+  <section class="gallery-section" id="gallerySection">
+    <div class="gallery-header">
+      <h2 class="gallery-title">Nuestros Recuerdos Contigo</h2>
+      <span class="recuerdo-badge">17 Recuerdos</span>
+      <p class="gallery-subtitle">Toca cada foto para descubrir un mensaje</p>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Las fotos se generan dinamicamente con JS -->
+    </div>
+
+    <div class="gallery-footer">
+      <p class="footer-message">
+        Cada foto es un pedacito de amor que guardamos para siempre.<br>
+        <strong>Te amamos Julieta &#10084;</strong>
+      </p>
+      <button class="back-btn" id="backBtn">&#8592; Volver al inicio</button>
+    </div>
+  </section>
+
+  <!-- Lightbox para foto ampliada -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&#10005;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-polaroid">
+        <div class="lightbox-flip-container">
+          <div class="lightbox-flipper">
+            <div class="lightbox-front">
+              <img id="lightboxImg" src="" alt="Foto de Julieta">
+            </div>
+            <div class="lightbox-back">
+              <p class="lightbox-message" id="lightboxMessage"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

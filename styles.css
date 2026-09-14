@@ -1,0 +1,787 @@
+/* ===================================
+   FELIZ CUMPLEAÑOS JULIETA
+   Estilo: Suave, femenino, moderno
+   Colores: Beige, rosa pálido, blanco, dorado
+   =================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #FDF6EC;
+  --cream-dark: #F5EBD9;
+  --beige: #E8DDD3;
+  --blush: #F2D7D5;
+  --blush-dark: #E8C4C0;
+  --rose: #D4A5A5;
+  --rose-deep: #C48B8B;
+  --gold: #D4A574;
+  --gold-light: #E8C9A0;
+  --brown-light: #A68B6B;
+  --brown: #8B6F56;
+  --white: #FFFFFF;
+  --text-dark: #5C4A3A;
+  --text-medium: #7A6555;
+  --text-light: #9E8B7A;
+  --shadow-soft: 0 4px 20px rgba(164, 130, 100, 0.15);
+  --shadow-medium: 0 8px 32px rgba(164, 130, 100, 0.2);
+  --shadow-strong: 0 12px 48px rgba(164, 130, 100, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Particulas flotantes --- */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  opacity: 0.3;
+  animation: floatParticle linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* ===================================
+   PANTALLA HERO / INICIO
+   =================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    var(--cream) 0%,
+    var(--cream-dark) 50%,
+    var(--blush) 100%
+  );
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flores decorativas */
+.flowers-top, .flowers-bottom {
+  font-size: 1.5rem;
+  color: var(--rose);
+  letter-spacing: 12px;
+  margin: 16px 0;
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Titulo principal */
+.hero-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 4px;
+  line-height: 1.2;
+  animation: fadeInUp 1.2s ease-out 0.2s both;
+}
+
+.hero-name {
+  font-family: 'Sacramento', cursive;
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: var(--rose-deep);
+  margin-bottom: 24px;
+  line-height: 1;
+  animation: fadeInUp 1.2s ease-out 0.4s both;
+  text-shadow: 2px 2px 4px rgba(196, 139, 139, 0.2);
+}
+
+/* Dedicatoria */
+.dedication {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 28px 24px;
+  margin: 0 auto 28px;
+  border: 1px solid rgba(232, 221, 211, 0.5);
+  box-shadow: var(--shadow-soft);
+  animation: fadeInUp 1.2s ease-out 0.6s both;
+}
+
+.dedication-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-medium);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.dedication-text:last-of-type {
+  margin-bottom: 20px;
+}
+
+.dedication-sign {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.15rem;
+  color: var(--brown);
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+.family-name {
+  display: inline;
+  font-weight: 600;
+  color: var(--rose-deep);
+}
+
+.family-separator {
+  display: inline-block;
+  margin: 0 8px;
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+/* Badge de edad */
+.age-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  margin: 0 auto 28px;
+  box-shadow: 0 4px 20px rgba(212, 165, 116, 0.35);
+  animation: fadeInUp 1.2s ease-out 0.8s both, glowPulse 3s ease-in-out infinite 2s;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(212, 165, 116, 0.35); }
+  50% { box-shadow: 0 4px 30px rgba(212, 165, 116, 0.55); }
+}
+
+.age-number {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Boton revelar */
+.reveal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+  color: var(--white);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(212, 165, 165, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 1.2s ease-out 1s both;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.reveal-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.reveal-btn:hover::before {
+  left: 100%;
+}
+
+.reveal-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 32px rgba(212, 165, 165, 0.5);
+}
+
+.reveal-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+  animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.2); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.15); }
+}
+
+/* ===================================
+   GALERIA DE FOTOS
+   =================================== */
+.gallery-section {
+  min-height: 100vh;
+  padding: 60px 16px 40px;
+  position: relative;
+  z-index: 1;
+  display: none;
+  opacity: 0;
+  background: linear-gradient(
+    180deg,
+    var(--blush) 0%,
+    var(--cream-dark) 20%,
+    var(--cream) 60%,
+    var(--cream-dark) 100%
+  );
+}
+
+.gallery-section.active {
+  display: block;
+  animation: fadeInGallery 0.8s ease-out forwards;
+}
+
+@keyframes fadeInGallery {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.gallery-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+
+.gallery-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.recuerdo-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: var(--white);
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 12px 0 4px;
+  box-shadow: 0 3px 12px rgba(212, 165, 116, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* Grid de fotos */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  padding: 0 4px;
+}
+
+@media (min-width: 480px) {
+  .gallery-grid {
+    gap: 28px;
+  }
+}
+
+/* Tarjeta polaroid */
+.polaroid-card {
+  perspective: 1000px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  animation: cardAppear 0.6s ease-out backwards;
+}
+
+.polaroid-card:nth-child(1) { animation-delay: 0.05s; }
+.polaroid-card:nth-child(2) { animation-delay: 0.1s; }
+.polaroid-card:nth-child(3) { animation-delay: 0.15s; }
+.polaroid-card:nth-child(4) { animation-delay: 0.2s; }
+.polaroid-card:nth-child(5) { animation-delay: 0.25s; }
+.polaroid-card:nth-child(6) { animation-delay: 0.3s; }
+.polaroid-card:nth-child(7) { animation-delay: 0.35s; }
+.polaroid-card:nth-child(8) { animation-delay: 0.4s; }
+.polaroid-card:nth-child(9) { animation-delay: 0.45s; }
+.polaroid-card:nth-child(10) { animation-delay: 0.5s; }
+.polaroid-card:nth-child(11) { animation-delay: 0.55s; }
+.polaroid-card:nth-child(12) { animation-delay: 0.6s; }
+.polaroid-card:nth-child(13) { animation-delay: 0.65s; }
+.polaroid-card:nth-child(14) { animation-delay: 0.7s; }
+.polaroid-card:nth-child(15) { animation-delay: 0.75s; }
+.polaroid-card:nth-child(16) { animation-delay: 0.8s; }
+.polaroid-card:nth-child(17) { animation-delay: 0.85s; }
+
+/* Ultima foto centrada cuando hay numero impar */
+.polaroid-card:nth-last-child(1):nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 50%;
+  justify-self: center;
+}
+
+/* Foto 17: estilo especial sin imagen */
+.polaroid-card.special-empty .polaroid-front {
+  background: linear-gradient(135deg, var(--cream), var(--blush));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px 36px;
+}
+
+.polaroid-card.special-empty .polaroid-front img {
+  display: none;
+}
+
+.polaroid-card.special-empty .polaroid-front .empty-icon {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 6px;
+  color: var(--rose);
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+.polaroid-card.special-empty .polaroid-front .empty-text {
+  display: block;
+  font-family: 'Dancing Script', cursive;
+  font-size: 0.9rem;
+  color: var(--brown);
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotate(-3deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.polaroid-inner {
+  position: relative;
+  width: 100%;
+  padding-bottom: 130%;
+  transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.polaroid-card.flipped .polaroid-inner {
+  transform: rotateY(180deg);
+}
+
+.polaroid-card:hover .polaroid-inner {
+  transform: rotateY(8deg) scale(1.02);
+}
+
+.polaroid-card.flipped:hover .polaroid-inner {
+  transform: rotateY(180deg) scale(1.02);
+}
+
+.polaroid-front, .polaroid-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Frente: estilo polaroid clasico */
+.polaroid-front {
+  background: var(--white);
+  padding: 8px 8px 36px;
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(232, 221, 211, 0.4);
+}
+
+.polaroid-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: sepia(15%) saturate(90%);
+  transition: filter 0.3s ease;
+}
+
+.polaroid-card:hover .polaroid-front img {
+  filter: sepia(0%) saturate(100%);
+}
+
+/* Texto debajo de la foto en polaroid */
+.polaroid-front::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 0.85rem;
+  color: var(--text-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Reverso: mensaje */
+.polaroid-back {
+  background: linear-gradient(135deg, var(--cream), var(--blush));
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  box-shadow: var(--shadow-medium);
+  border: 2px solid var(--gold-light);
+}
+
+.polaroid-back-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--brown);
+  text-align: center;
+  font-weight: 600;
+}
+
+.polaroid-back-heart {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: var(--rose);
+}
+
+/* Footer de la galeria */
+.gallery-footer {
+  text-align: center;
+  padding: 20px 0;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.footer-message {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-medium);
+  margin-bottom: 24px;
+}
+
+.footer-message strong {
+  color: var(--rose-deep);
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: 2px solid var(--rose);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--rose-deep);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-btn:hover {
+  background: var(--rose);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(212, 165, 165, 0.3);
+}
+
+/* ===================================
+   LIGHTBOX
+   =================================== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(92, 74, 58, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.lightbox-content {
+  width: 100%;
+  max-width: 360px;
+  animation: lightboxIn 0.4s ease-out;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.lightbox-polaroid {
+  background: var(--white);
+  padding: 12px 12px 52px;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-flip-container {
+  perspective: 1200px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lightbox-flipper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.lightbox-polaroid.flipped .lightbox-flipper {
+  transform: rotateY(180deg);
+}
+
+.lightbox-front, .lightbox-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(10%) saturate(90%);
+}
+
+.lightbox-back {
+  background: linear-gradient(135deg, var(--cream), var(--blush));
+  transform: rotateY(180deg);
+  padding: 24px;
+}
+
+.lightbox-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--brown);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-name {
+    font-size: 3.5rem;
+  }
+  .dedication {
+    padding: 22px 18px;
+  }
+  .dedication-text {
+    font-size: 0.92rem;
+  }
+  .gallery-grid {
+    gap: 14px;
+  }
+  .polaroid-back-message {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 700px;
+  }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode - mantener claro */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--cream);
+    color: var(--text-dark);
+  }
+}
+
+/* Safe area para iOS */
+@supports (padding: max(0px)) {
+  .hero {
+    padding-top: max(40px, env(safe-area-inset-top));
+    padding-bottom: max(40px, env(safe-area-inset-bottom));
+  }
+  .gallery-section {
+    padding-top: max(60px, calc(env(safe-area-inset-top) + 20px));
+    padding-bottom: max(40px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Print */
+@media print {
+  .reveal-btn, .back-btn, .particles, .lightbox {
+    display: none !important;
+  }
+  .gallery-section {
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
