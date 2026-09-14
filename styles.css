@@ -393,43 +393,171 @@ body {
 .polaroid-card:nth-child(16) { animation-delay: 0.8s; }
 .polaroid-card:nth-child(17) { animation-delay: 0.85s; }
 
-/* Ultima foto centrada cuando hay numero impar */
+/* Ultima foto centrada cuando hay numero impar en pantallas pequenas */
 .polaroid-card:nth-last-child(1):nth-child(odd) {
   grid-column: 1 / -1;
-  max-width: 50%;
+  width: 100%;
+  max-width: 240px;
   justify-self: center;
 }
 
-/* Foto 17: estilo especial sin imagen */
+/* Foto 17: Estilo especial marco Polaroid vacio para el cumpleanos */
+.polaroid-card.special-empty {
+  position: relative;
+}
+
 .polaroid-card.special-empty .polaroid-front {
-  background: linear-gradient(135deg, var(--cream), var(--blush));
+  background: var(--white);
+  border: 2px solid var(--gold-light);
+  box-shadow: 0 8px 25px rgba(212, 165, 116, 0.25);
+}
+
+.polaroid-card.special-empty .polaroid-front::after {
+  color: var(--brown);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+/* Contenedor interior vacio de la foto */
+.empty-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #FFFDF9 0%, #FDF2EE 100%);
+  border: 2px dashed var(--gold);
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px 12px 36px;
+  text-align: center;
+  padding: 10px 8px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
-.polaroid-card.special-empty .polaroid-front img {
-  display: none;
-}
-
-.polaroid-card.special-empty .polaroid-front .empty-icon {
-  display: block;
-  font-size: 2.5rem;
+.empty-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: var(--white);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 2px 8px;
+  border-radius: 12px;
   margin-bottom: 6px;
-  color: var(--rose);
-  animation: gentlePulse 3s ease-in-out infinite;
+  box-shadow: 0 2px 6px rgba(212, 165, 116, 0.3);
 }
 
-.polaroid-card.special-empty .polaroid-front .empty-text {
+.empty-icon {
+  display: block;
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 4px;
+  animation: cameraFloat 3s ease-in-out infinite;
+}
+
+@keyframes cameraFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.05); }
+}
+
+.empty-title {
   display: block;
   font-family: 'Dancing Script', cursive;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--brown);
-  text-align: center;
-  line-height: 1.3;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.empty-desc {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-light);
+  line-height: 1.25;
+  margin-bottom: 8px;
+  max-width: 90%;
+}
+
+.empty-tap-hint {
+  display: inline-block;
+  font-size: 0.65rem;
   font-weight: 600;
+  color: var(--rose-deep);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3px 8px;
+  border-radius: 12px;
+  border: 1px dashed var(--rose);
+  box-shadow: 0 1px 4px rgba(212, 165, 165, 0.2);
+}
+
+/* Reverso especial para la foto 17 */
+.polaroid-back.special-back {
+  background: linear-gradient(135deg, #FFFDF8 0%, #FDF0EE 100%);
+  border: 2px solid var(--gold);
+  box-shadow: inset 0 0 15px rgba(212, 165, 116, 0.2), var(--shadow-medium);
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.special-back-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.special-back-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 2px;
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+.special-back-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(0.95rem, 2.8vw, 1.12rem);
+  font-weight: 700;
+  color: var(--brown);
+  line-height: 1.15;
+  margin-bottom: 3px;
+}
+
+.special-back-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(0.72rem, 2vw, 0.84rem);
+  line-height: 1.25;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 2px;
+  max-width: 95%;
+}
+
+.special-back-sub {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(0.7rem, 1.9vw, 0.82rem);
+  line-height: 1.2;
+  color: var(--text-medium);
+  font-weight: 600;
+  margin-bottom: 4px;
+  max-width: 95%;
+}
+
+.special-back-sign {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(0.75rem, 2.2vw, 0.88rem);
+  font-weight: 700;
+  color: var(--rose-deep);
+  line-height: 1.15;
 }
 
 @keyframes cardAppear {
@@ -522,24 +650,30 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 16px;
+  padding: 12px 10px;
   box-shadow: var(--shadow-medium);
   border: 2px solid var(--gold-light);
+  box-sizing: border-box;
 }
 
 .polaroid-back-message {
   font-family: 'Dancing Script', cursive;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: clamp(0.78rem, 2.2vw, 0.92rem);
+  line-height: 1.35;
   color: var(--brown);
   text-align: center;
   font-weight: 600;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .polaroid-back-heart {
   display: block;
-  font-size: 1.8rem;
-  margin-bottom: 8px;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
   color: var(--rose);
 }
 
@@ -659,6 +793,12 @@ body {
   padding: 12px 12px 52px;
   border-radius: 4px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lightbox-polaroid.lightbox-special {
+  border: 2px solid var(--gold);
+  box-shadow: 0 20px 60px rgba(212, 165, 116, 0.4);
 }
 
 .lightbox-flip-container {
@@ -700,19 +840,90 @@ body {
   filter: sepia(10%) saturate(90%);
 }
 
+.empty-placeholder.lightbox-empty {
+  padding: 24px 16px;
+  gap: 4px;
+}
+
+.lightbox-empty .empty-badge {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+}
+
+.lightbox-empty .empty-icon {
+  font-size: 3.2rem;
+  margin-bottom: 6px;
+}
+
+.lightbox-empty .empty-title {
+  font-size: 1.6rem;
+}
+
+.lightbox-empty .empty-desc {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.lightbox-empty .empty-tap-hint {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+}
+
 .lightbox-back {
-  background: linear-gradient(135deg, var(--cream), var(--blush));
+  background: linear-gradient(135deg, #FFFDF8 0%, #FDF0EE 100%);
   transform: rotateY(180deg);
   padding: 24px;
+  border: 2px solid var(--gold-light);
 }
 
 .lightbox-message {
   font-family: 'Dancing Script', cursive;
   font-size: 1.3rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--brown);
   text-align: center;
   font-weight: 600;
+  width: 100%;
+}
+
+.lightbox-special-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.lightbox-special-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+.lightbox-special-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.45rem;
+  color: var(--brown);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.lightbox-special-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.lightbox-special-sign {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--rose-deep);
+  margin-top: 4px;
 }
 
 /* ===================================
@@ -743,6 +954,11 @@ body {
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
     max-width: 700px;
+  }
+  .polaroid-card:nth-last-child(1):nth-child(odd) {
+    grid-column: auto;
+    max-width: 100%;
+    justify-self: stretch;
   }
 }
 

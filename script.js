@@ -8,8 +8,8 @@
 const photos = [
   {
     image: 'assets/foto1.jpg',
-    caption: 'Tu primer ano',
-    message: 'El dia que llegaste al mundo, todo cobro sentido. Eres el regalo mas hermoso que la vida nos dio.'
+    caption: 'Tu primer año',
+    message: 'El día que llegaste al mundo, todo cobró sentido. Eres el regalo más hermoso que la vida nos dio.'
   },
   {
     image: 'assets/foto2.jpg',
@@ -19,77 +19,77 @@ const photos = [
   {
     image: 'assets/foto3.jpg',
     caption: 'Risitas',
-    message: 'Rodeada de amor desde siempre y para siempre con los que estan y los que te cuidadan desde lejos.'
+    message: 'Rodeada de amor desde siempre y para siempre, con los que están y los que te cuidan con todo su amor.'
   },
   {
     image: 'assets/foto4.jpeg',
     caption: 'Aventurera',
-    message: 'No dejes que nadie borre esa sonrisa que siempre alegra al que la ve'
+    message: 'No dejes que nadie borre esa sonrisa que siempre alegra a todos los que te ven.'
   },
   {
     image: 'assets/foto5.jpg',
-    caption: 'Nina dulce',
-    message: 'Con ese corazon enorme que tienes, haces el mundo un lugar mejor para todos los que te rodean.'
+    caption: 'Niña dulce',
+    message: 'Con ese corazón enorme que tienes, haces el mundo un lugar mejor para todos los que te rodean.'
   },
   {
     image: 'assets/foto6.jpg',
     caption: 'Amiga de todos',
-    message: 'Siempre seras nuestra pequeña, nuestro tesoro, nuestro chanchito'
+    message: 'Siempre serás nuestra pequeña, nuestro tesoro, nuestro chanchito.'
   },
   {
     image: 'assets/foto7.jpg',
     caption: 'Estrellita',
-    message: 'Brillas con luz propia. No necesitas nada mas para ser la persona mas increible que conocemos.'
+    message: 'Brillas con luz propia. No necesitas nada más para ser la persona más increíble que conocemos.'
   },
   {
     image: 'assets/foto8.jpg',
     caption: 'Creciendo',
-    message: 'Cada anio nos sorprendes mas. Ver crecer es lo mas hermoso que nos ha pasado.'
+    message: 'Cada año nos sorprendes más. Verte crecer es lo más hermoso que nos ha pasado.'
   },
   {
     image: 'assets/foto9.jpg',
     caption: 'Sonrisa contagiosa',
-    message: 'Tu sonrisa tiene el poder de alejar cualquier nube. Nunca dejes de sonreir, Julieta.'
+    message: 'Tu sonrisa tiene el poder de alejar cualquier nube. Nunca dejes de sonreír, Julieta.'
   },
   {
     image: 'assets/foto10.jpg',
     caption: 'Valiente',
-    message: 'Con el corazon en la mano enfrentas cada reto. Tu fuerza nos admira y nos enorgullece.'
+    message: 'Con el corazón en la mano enfrentas cada reto. Tu fuerza nos llena de orgullo y admiración.'
   },
   {
     image: 'assets/foto11.jpg',
-    caption: 'Alegria del alma',
-    message: 'Llegaste para llenar nuestras vidas de color. Cada dia a tu lado es una bendicion.'
+    caption: 'Alegría del alma',
+    message: 'Llegaste para llenar nuestras vidas de color. Cada día a tu lado es una bendición.'
   },
   {
     image: 'assets/foto12.jpg',
     caption: 'Luz propia',
-    message: 'Tu luz ilumina hasta los rincones mas oscuros. Sigue brillando siempre, nina hermosa.'
+    message: 'Tu luz ilumina hasta los rincones más oscuros. Sigue brillando siempre, niña hermosa.'
   },
   {
     image: 'assets/foto13.jpg',
-    caption: 'Corazon noble',
+    caption: 'Corazón noble',
     message: 'Tu bondad no tiene precio. Eres pura luz y amor, y eso es algo que nadie te puede quitar.'
   },
   {
     image: 'assets/foto14.jpg',
     caption: 'Mujer bonita',
-    message: 'Siendo tan joven ya se ve la mujer maravillosa en la que te estas convirtiendo. Estamos orgullosos.'
+    message: 'Siendo tan joven ya se ve la mujer maravillosa en la que te estás convirtiendo. Estamos sumamente orgullosos.'
   },
   {
     image: 'assets/foto15.jpg',
     caption: 'Fuerza y gracia',
-    message: 'Con la fuerza de una guerrera y la gracia de una princesa. Eres todo lo que soñamos y mas.'
+    message: 'Con la fuerza de una guerrera y la gracia de una princesa. Eres todo lo que soñamos y más.'
   },
   {
     image: 'assets/foto16.jpg',
-    caption: 'Casi toda una',
-    message: 'A un paso de cumplir 17 anos, ya eres una mujer increible. El mundo esta listo para ti.'
+    caption: 'Casi 17',
+    message: 'A un paso de cumplir 17 años, ya eres una mujer increíble. ¡El mundo está listo para ti!'
   },
   {
-    image: 'assets/foto17.jpg',
-    caption: 'Feliz 17',
-    message: 'Hoy celebramos tus 17 anos de vida, amor y felicidad. Que todo lo bonito que mereces llegue a ti. Te amamos Julieta.',
+    image: '',
+    caption: 'Tus 17 Años ✨',
+    message: '¡Felices 17 Años, Julieta! 🎂✨\n\nEste espacio está reservado para guardar la mejor foto de tu festejo.\n\n¡Que este nuevo año de vida esté lleno de momentos mágicos y felicidad!\n\nTe amamos con todo nuestro corazón ❤️',
     special: true
   }
 ];
@@ -151,23 +151,40 @@ function renderGallery() {
     card.dataset.index = index;
 
     const frontContent = photo.special
-      ? `<span class="empty-icon">&#128247;</span>
-         <span class="empty-text">Aqui va tu recuerdo<br>de este cumpleanos</span>`
+      ? `<div class="empty-placeholder">
+           <div class="empty-badge">Próximamente</div>
+           <span class="empty-icon">&#128247;</span>
+           <span class="empty-title">Tu Foto de los 17</span>
+           <span class="empty-desc">Espacio reservado para tu gran festejo &#10022;</span>
+           <span class="empty-tap-hint">&#10084; Toca para leer el mensaje</span>
+         </div>`
       : `<img src="${photo.image}" alt="${photo.caption}" 
              loading="lazy"
              onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22><rect fill=%22%23E8DDD3%22 width=%22400%22 height=%22500%22/><text fill=%22%23A68B6B%22 font-family=%22sans-serif%22 font-size=%2218%22 x=%22200%22 y=%22250%22 text-anchor=%22middle%22>Foto ${index + 1}</text></svg>'">`;
+
+    const backContent = photo.special
+      ? `<div class="polaroid-back special-back">
+           <div class="special-back-content">
+             <span class="special-back-icon">&#127874;</span>
+             <h3 class="special-back-title">¡Felices 17 Años, Juli!</h3>
+             <p class="special-back-text">Este espacio está reservado para la mejor foto de tu festejo.</p>
+             <p class="special-back-sub">¡Que este nuevo año esté lleno de magia y felicidad!</p>
+             <span class="special-back-sign">Te amamos con todo el corazón &#10084;</span>
+           </div>
+         </div>`
+      : `<div class="polaroid-back">
+           <div class="polaroid-back-message">
+             <span class="polaroid-back-heart">&#10084;</span>
+             <div class="message-body">${photo.message}</div>
+           </div>
+         </div>`;
 
     card.innerHTML = `
       <div class="polaroid-inner">
         <div class="polaroid-front" data-caption="${photo.caption}">
           ${frontContent}
         </div>
-        <div class="polaroid-back">
-          <div class="polaroid-back-message">
-            <span class="polaroid-back-heart">&#10084;</span>
-            ${photo.message}
-          </div>
-        </div>
+        ${backContent}
       </div>
     `;
 
@@ -193,13 +210,40 @@ function handleCardClick(index) {
 // ---- LIGHTBOX ----
 function openLightbox(index) {
   const photo = photos[index];
-  lightboxImg.src = photo.image;
-  lightboxMessage.textContent = photo.message;
+  const lightboxFront = lightbox.querySelector('.lightbox-front');
+  const lightboxPolaroid = lightbox.querySelector('.lightbox-polaroid');
+
+  if (photo.special) {
+    lightboxPolaroid.classList.add('lightbox-special');
+    lightboxFront.innerHTML = `
+      <div class="empty-placeholder lightbox-empty">
+        <div class="empty-badge">Próximamente</div>
+        <span class="empty-icon">&#128247;</span>
+        <span class="empty-title">Tu Foto de los 17</span>
+        <span class="empty-desc">Espacio reservado para el festejo de tu cumpleaños</span>
+        <span class="empty-tap-hint">&#10084; Toca para dar vuelta y leer tu mensaje</span>
+      </div>
+    `;
+    lightboxMessage.innerHTML = `
+      <div class="lightbox-special-msg">
+        <span class="lightbox-special-icon">&#127874;</span>
+        <h3 class="lightbox-special-title">¡Felices 17 Años, Julieta!</h3>
+        <p class="lightbox-special-text">Hoy celebramos tu vida y la hermosa persona en la que te has convertido. Este espacio está esperando la foto de tu gran festejo.</p>
+        <p class="lightbox-special-text">¡Que este nuevo año esté lleno de momentos mágicos y sueños cumplidos!</p>
+        <span class="lightbox-special-sign">Te amamos con todo nuestro corazón &#10084;</span>
+      </div>
+    `;
+  } else {
+    lightboxPolaroid.classList.remove('lightbox-special');
+    lightboxFront.innerHTML = `<img id="lightboxImg" src="${photo.image}" alt="${photo.caption}">`;
+    lightboxMessage.innerHTML = photo.message;
+  }
+
   lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
 
   // Reset flip state
-  lightbox.querySelector('.lightbox-polaroid').classList.remove('flipped');
+  lightboxPolaroid.classList.remove('flipped');
 }
 
 function closeLightbox() {
