@@ -105,6 +105,7 @@ const lightboxImg = document.getElementById('lightboxImg');
 const lightboxMessage = document.getElementById('lightboxMessage');
 const lightboxClose = document.getElementById('lightboxClose');
 const particlesContainer = document.getElementById('particles');
+const bgMusic = document.getElementById('bgMusic');
 
 // ---- INICIALIZAR ----
 function init() {
@@ -262,6 +263,9 @@ function setupEventListeners() {
       gallerySection.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 600);
+
+    // Reproducir musica de fondo
+    bgMusic.play().catch(e => console.log('No se pudo reproducir la musica:', e));
   });
 
   // Boton volver al inicio
@@ -270,6 +274,10 @@ function setupEventListeners() {
     hero.style.display = 'flex';
     hero.style.animation = 'fadeInUp 0.8s ease-out';
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Pausar musica de fondo
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
   });
 
   // Cerrar lightbox
